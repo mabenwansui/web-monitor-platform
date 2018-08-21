@@ -26,13 +26,13 @@
         path: [
           {
             title: '错误监控'
-          }          
+          }
         ]
       }
     },
     mounted(){
-      charts(document.querySelector('.fe-h-pc dt'));
-      charts(document.querySelector('.fe-c-pc dt'));
+      charts.jsMonitorCharts(document.querySelector('.fe-h-pc dt'));
+      charts.jsMonitorCharts(document.querySelector('.fe-c-pc dt'));
     }
   }
 </script>
@@ -41,14 +41,14 @@
   .charts-list{
     display: flex; flex-flow: row wrap;
     dl{
-      width: 510px;         
-      margin: 0 30px 30px 0;
+      width: 510px;
+      margin: 0 30px 60px 0;
       &:nth-child(2){
         margin-right: 0;
       }
       dt{
         width: 100%;
-        height: 300px;  
+        height: 300px;
       }
       dd{
         text-align: center;
@@ -64,7 +64,7 @@
           &:hover{
             text-decoration: none;
           }
-        }        
+        }
       }
     }
   }

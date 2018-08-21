@@ -1,7 +1,7 @@
 <template>
   <div class="box-space">
     <Breadcrumb :data="path" />
-    <SubMenu active="ajax" />
+    <SubMenu type="jsMonitor" active="ajax" />
     <SearchBar />
     <table class="table">
       <thead>

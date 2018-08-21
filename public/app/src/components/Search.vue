@@ -3,7 +3,7 @@
     <i class="iconfont icon-sousuo"></i>
     <input type="text" v-model="input" class="text" :placeholder="placeholderInfo">
     <input type="button" class="search-btn" @click="submitHandler" value="搜索">
-  </div>  
+  </div>
 </template>
 
 <script>

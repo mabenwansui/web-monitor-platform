@@ -5,11 +5,12 @@
     </div>
     <div class="list">
       <ul>
-        <li class="active">
-          <router-link class="iconfont icon-jiankong" to="/"></router-link>
-        </li>
-        <li>
-          <router-link class="iconfont icon-xingnengceshi" to="/"></router-link>
+        <li
+          v-for="(item, index) in list" :key="index"
+          :class="isActive(item.link) && 'active'"
+          @click="event=> {active = item.link}"
+        >
+          <router-link :class="`iconfont ${item.icon}`" :to="item.link" />
         </li>
       </ul>
     </div>
@@ -18,7 +19,35 @@
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  methods: {
+    isActive(link){
+      if(link !== '/' || ''){
+        return this.active.includes(link);
+      }else{
+        return link === this.active;
+      }
+    }
+  },
+  data(){
+    return {
+      list: [
+        {
+          icon: 'icon-jiankong',
+          link: '/'
+        },
+        {
+          icon: 'icon-xingnengceshi',
+          link: '/performance-monitor/'
+        },
+        {
+          icon: 'icon-ymwz-yjxdns',
+          link: '/dns-monitor/'
+        }
+      ],
+      active: this.$router.history.current.path
+    }
+  }
 }
 </script>
 
@@ -41,7 +70,7 @@ export default {
     background: #F86C52;
     .iconfont{
       top: 11px;
-      position: relative;      
+      position: relative;
       font-size: 30px;
       &:before{
         color: #fff;
@@ -59,6 +88,11 @@ export default {
       line-height: 34px;
       margin-left: 5px;
       border-radius: 20px 0 0 20px;
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
       &.active{
         background: #fff;
         border-left: 2px solid #24262E;

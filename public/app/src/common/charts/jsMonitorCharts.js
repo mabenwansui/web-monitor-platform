@@ -1,6 +1,6 @@
 import echarts from 'echarts'
 
-export default function charts(dom){
+export default function jsMonitorCharts(dom){
   let myChart = echarts.init(dom);
   let data = [
     ["00:00",16,14],

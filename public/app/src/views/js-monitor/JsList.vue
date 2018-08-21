@@ -1,7 +1,7 @@
 <template>
   <div class="box-space">
     <Breadcrumb :data="path" />
-    <SubMenu active="js" />
+    <SubMenu type="jsMonitor" active="js" />
     <SearchBar />
     <table class="table">
       <thead>
@@ -45,7 +45,7 @@
           <td>2018-06-22 16:05</td>
           <td>9105</td>
           <td>1100</td>
-        </tr>                
+        </tr>
       </tbody>
     </table>
   </div>

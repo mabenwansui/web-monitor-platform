@@ -1,17 +1,28 @@
 <template>
   <section class="submenu">
-    <ul>
-      <li :class="active==='js' ? 'active' : ''">
-        <router-link to="/js-monitor/js-list/fe-h-pc">js错误</router-link>
+    <ul v-if="type" :data-type="type">
+      <li
+        v-for="(item, index) in list"
+        :class="{
+          active: active===item.name
+        }"
+        :key="index"
+        :data-name="item.name"
+      >
+        <router-link :to="item.link">{{item.title}}</router-link>
       </li>
-      <li :class="active==='ajax' ? 'active' : ''">
-        <router-link to="/js-monitor/ajax-list/fe-h-pc">ajax错误</router-link>
-      </li>
-      <li>
-        <router-link to="/">用户</router-link>
-      </li>
-      <li>
-        <router-link to="/">埋点</router-link>
+    </ul>
+    <ul v-else>
+      <li
+        v-for="(item, index) in data"
+        :class="{
+          active: active===item.name
+        }"
+        :key="index"
+        :data-name="item.name"
+      >
+        <a href="javascript:;" v-if="typeof item.link === 'function'" @click="item.link">{{item.title}}</a>
+        <router-link v-else :to="item.link">{{item.title}}</router-link>
       </li>
     </ul>
   </section>
@@ -20,11 +31,56 @@
 <script>
 export default {
   name: 'Nav',
-  props: ['active'],
+  props: ['type', 'active', 'data'],
+  computed: {
+    list(){ return this[this.type] }
+  },
   data(){
-    //console.log(this.$router.params);
     return {
-
+      jsMonitor: [
+        {
+          title: 'js错误',
+          name: 'js',
+          link: '/js-monitor/js-list/fe-h-pc'
+        },
+        {
+          title: 'ajax错误',
+          name: 'ajax',
+          link: '/js-monitor/ajax-list/fe-h-pc',
+        },
+        {
+          title: '资源加载错误',
+          name: 'resource',
+          link: '/'
+        },
+        {
+          title: '用户',
+          name: 'user',
+          link: '/'
+        },
+        {
+          title: '埋点',
+          name: 'custom',
+          link: '/'
+        }
+      ],
+      performanceMonitor: [
+        {
+          title: '页面性能',
+          name: 'page',
+          link: '/performance-monitor/fe-pc-h/page-list'
+        },
+        {
+          title: 'ajax性能',
+          name: 'ajax',
+          link: '/'
+        },
+        {
+          title: '资源加载',
+          name: 'resource',
+          link: '/'
+        }
+      ]
     }
   }
 }
@@ -39,6 +95,8 @@ export default {
       li{
         margin-right: 40px;
         padding: 0 2px;
+        min-width: 40px;
+        text-align: center;
         line-height: 30px;
         margin-bottom: -1px;
         a{
