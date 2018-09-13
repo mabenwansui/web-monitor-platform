@@ -2,18 +2,32 @@
   <section class="path">
     <dl v-for="(item, key) in data" :key="key">
       <template v-if="item.comp === 'port'">
-       <dl class="select" @mouseover="showHandle" @mouseout="hideHandle">
+        <dl class="select" @mouseover="showHandle" @mouseout="hideHandle">
           <dt><i class="iconfont icon-xiala"></i>{{$route.params.port.toUpperCase()}}</dt>
           <dd v-if="portDrop" @click="hideHandle">
-            <router-link 
-              v-for="(item, key) in portData" 
-              :key="key" 
+            <router-link
+              v-for="(item, key) in portData"
+              :key="key"
               :to="`/js-monitor/js-list/${item}`"
             >
               {{item.toUpperCase()}}
             </router-link>
           </dd>
-        </dl>        
+        </dl>
+      </template>
+      <template v-else-if="item.comp === 'static-domain'">
+        <dl class="select" @mouseover="showHandle" @mouseout="hideHandle">
+          <dt><i class="iconfont icon-xiala"></i>{{staticDomainData[0]}}</dt>
+          <dd v-if="portDrop" @click="hideHandle">
+            <router-link
+              v-for="(item, key) in staticDomainData"
+              :key="key"
+              :to="``"
+            >
+              {{item.toUpperCase()}}
+            </router-link>
+          </dd>
+        </dl>
       </template>
       <template v-else>
         <dt>
@@ -22,8 +36,8 @@
           </template>
           <template v-else>
             {{item.title}}
-          </template>        
-        </dt>      
+          </template>
+        </dt>
       </template>
     </dl>
 
@@ -37,7 +51,8 @@ export default {
   data(){
     return {
       portDrop: false,
-      portData: ['fe-h-pc', 'fe-msk-pc', 'fe-mskh-pc', 'fe-clt']
+      portData: ['fe-h-pc', 'fe-msk-pc', 'fe-mskh-pc', 'fe-clt'],
+      staticDomainData: ['concat.lietou-static.com']
     }
   },
   methods: {
@@ -68,7 +83,7 @@ export default {
       dt{
         display: inline-block;
         border: 1px solid #fff;
-        border-radius: 5px;             
+        border-radius: 5px;
       }
       &.select dt{
         cursor: pointer;
@@ -82,7 +97,7 @@ export default {
         border: 1px solid #eee;
         border-radius: 5px;
         line-height: 24px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         a{
           font-size: 14px;
           display: block;
@@ -99,9 +114,9 @@ export default {
       }
       &:first-child{
         &:before{
-          content: '';       
-          margin-right: 0;   
-        }        
+          content: '';
+          margin-right: 0;
+        }
       }
     }
   }

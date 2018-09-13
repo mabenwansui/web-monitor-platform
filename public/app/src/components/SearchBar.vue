@@ -11,9 +11,9 @@
           <input type="text" :placeholder="time" class="text"> <i>⎯⎯</i>
           <input type="text" :placeholder="time" class="text">
         </span>
-      </div> 
+      </div>
       <aside>
-        <Search :submit="submit" placeholderInfo="grep aaa | grep -v bbb | grep -B n -A n ccc | grep -or 3ms -or 5ms" />
+        <Search :submit="submit" :placeholderInfo="_placeholderInfo" />
       </aside>
     </section>
   </form>
@@ -23,15 +23,21 @@
   import {formatDate} from '../common'
   export default {
     name: 'SearchFilter',
+    props: ['placeholderInfo'],
     components: {Search},
+    computed: {
+      _placeholderInfo(){
+        return this.placeholderInfo || 'grep aaa | grep -v bbb | grep -B n -A n ccc | grep -or 3ms -or 5ms'
+      }
+    },
     data(){
       return {
         time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss')
       }
     },
-    methods: {      
+    methods: {
       submit(){   //arguments = event,value
-        
+
       }
     }
   }
@@ -39,7 +45,7 @@
 <style lang="less">
   .serach{
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
     margin-bottom: 20px;
     aside{width: 530px;}
   }

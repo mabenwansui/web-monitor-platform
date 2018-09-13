@@ -49,19 +49,14 @@ export default {
           link: '/js-monitor/ajax-list/fe-h-pc',
         },
         {
-          title: '资源加载错误',
-          name: 'resource',
-          link: '/'
-        },
-        {
           title: '用户',
           name: 'user',
-          link: '/'
+          link: '/js-monitor/user-list/fe-h-pc'
         },
         {
           title: '埋点',
           name: 'custom',
-          link: '/'
+          link: '/js-monitor/custom-list/fe-h-pc'
         }
       ],
       performanceMonitor: [

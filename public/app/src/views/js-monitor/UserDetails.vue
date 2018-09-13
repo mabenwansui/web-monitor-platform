@@ -15,10 +15,6 @@
               <th>出现次数 :</th>
               <td>10021</td>
             </tr>
-            <tr>
-              <th>用户数 :</th>
-              <td>103213</td>
-            </tr>
           </table>
         </div>
       </section>
@@ -79,7 +75,7 @@
               </tr>
             </table>
           </dd>
-        </dl>                
+        </dl>
         <dl>
           <dt></dt>
           <dd>
@@ -127,45 +123,6 @@
         </dl>
       </section>
     </div>
-    <aside class="aside-user-list">
-      <div class="search">
-        <Search />
-      </div>    
-      <div class="list">   
-        <ul>
-          <li class="active">
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>
-          <li>
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>
-          <li>
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>
-          <li>
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>
-          <li>
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>
-          <li>
-            <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
-            <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
-            <p>北京     2018-06-22 16:50</p>
-          </li>                                              
-        </ul>
-      </div>
-    </aside>
   </article>
 </template>
 
@@ -173,7 +130,7 @@
   import Breadcrumb from '@components/Breadcrumb'
   import Search from '@components/Search'
   export default {
-    name: 'JsDetails',
+    name: 'UserDetails',
     components: {Breadcrumb, Search},
     data(){
       return {
@@ -190,7 +147,7 @@
           }
         ]
       }
-    }    
+    }
   }
 </script>
 
@@ -220,7 +177,7 @@
             position: absolute;
             left: 0;
             top: calc(50% - 6px);
-            width:0px; height:0px; line-height:0px; 
+            width:0px; height:0px; line-height:0px;
             border: 6px solid transparent;
             border-left-color: #4F5364;
           }
@@ -277,7 +234,7 @@
         overflow: hidden;
         border-radius: 50%;
         background: #fff;
-        border: 2px solid #F86C52;      
+        border: 2px solid #F86C52;
       }
       &.active{
         color: #F86C52;
@@ -300,7 +257,7 @@
           position: absolute;
           top: 10px;
           right: 12px;
-        }   
+        }
         table{
           th{
             text-align: right;

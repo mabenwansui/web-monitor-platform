@@ -1,6 +1,8 @@
 <template>
   <div class="main-container">
-    <section class="header"><SelectPort /></section>
+    <section class="header">
+      <SelectPort />
+    </section>
     <section class="app">
       <div class="menu-box"><Nav /></div>
       <div class="main-box">

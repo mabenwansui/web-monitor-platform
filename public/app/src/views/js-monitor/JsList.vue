@@ -7,47 +7,81 @@
       <thead>
         <tr>
           <th>错误信息</th>
-          <th>时间</th>
-          <th>出现次数</th>
-          <th>用户数</th>
+          <th class="text-center">时间</th>
+          <th class="text-center">出现次数</th>
+          <th class="text-center">用户数</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
             <router-link to="/js-monitor/fe-h-pc/js-details/1">
-              <p>ReferenceError: unknownVariable is not defined</p>
-              <p class="text-gray">h.liepin.com/resumemanage/showmytalentlist</p>
+              <p class="title">ReferenceError: unknownVariable is not defined</p>
+              <div class="sub-info">
+                <p class="text-gray sub-bar">
+                  <span>url: h.liepin.com/resumemanage/showmytalentlist</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span>file: https://concat.lietou-static.com/fe-msk-pc/v5/static/js/loader.js</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span class="mr">row:1 </span>
+                  <span class="mr">col:1032131</span>
+                </p>
+              </div>
             </router-link>
           </td>
-          <td>2018-06-22 16:05</td>
-          <td>9105</td>
-          <td>1100</td>
+          <td class="text-center">2018-06-22 16:05</td>
+          <td class="text-center">9105</td>
+          <td class="text-center">1100</td>
         </tr>
         <tr>
           <td>
             <router-link to="/js-monitor/fe-h-pc/js-details/1">
-              <p>ReferenceError: unknownVariable is not defined</p>
-              <p class="text-gray">h.liepin.com/resumemanage/showmytalentlist</p>
+              <p class="title">ReferenceError: unknownVariable is not defined</p>
+              <div class="sub-info">
+                <p class="text-gray sub-bar">
+                  <span>url: h.liepin.com/resumemanage/showmytalentlist</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span>file: https://concat.lietou-static.com/fe-msk-pc/v5/static/js/loader.js</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span class="mr">row:1 </span>
+                  <span class="mr">col:1032131</span>
+                </p>
+              </div>
             </router-link>
           </td>
-          <td>2018-06-22 16:05</td>
-          <td>9105</td>
-          <td>1100</td>
+          <td class="text-center">2018-06-22 16:05</td>
+          <td class="text-center">9105</td>
+          <td class="text-center">1100</td>
         </tr>
         <tr>
           <td>
             <router-link to="/js-monitor/fe-h-pc/js-details/1">
-              <p>ReferenceError: unknownVariable is not defined</p>
-              <p class="text-gray">h.liepin.com/resumemanage/showmytalentlist</p>
+              <p class="title">ReferenceError: unknownVariable is not defined</p>
+              <div class="sub-info">
+                <p class="text-gray sub-bar">
+                  <span>url: h.liepin.com/resumemanage/showmytalentlist</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span>file: https://concat.lietou-static.com/fe-msk-pc/v5/static/js/loader.js</span>
+                </p>
+                <p class="text-gray sub-bar">
+                  <span class="mr">row:1 </span>
+                  <span class="mr">col:1032131</span>
+                </p>
+              </div>
             </router-link>
           </td>
-          <td>2018-06-22 16:05</td>
-          <td>9105</td>
-          <td>1100</td>
+          <td class="text-center">2018-06-22 16:05</td>
+          <td class="text-center">9105</td>
+          <td class="text-center">1100</td>
         </tr>
       </tbody>
     </table>
+    <PagerBar />
   </div>
 </template>
 
@@ -56,9 +90,10 @@
   import SubMenu from '@components/SubMenu'
   import SearchBar from '@components/SearchBar'
   import Loading from '@components/Loading'
+  import PagerBar from '@components/PagerBar'
   export default {
     name: 'JsList',
-    components: {Breadcrumb, SubMenu, SearchBar, Loading},
+    components: {Breadcrumb, SubMenu, SearchBar, Loading, PagerBar},
     data(){
       return {
         path: [
@@ -79,4 +114,17 @@
 </script>
 
 <style scoped lang="less">
+  .title{
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .sub-bar{
+    margin-bottom: 5px;
+    span{
+      display: inline-block;
+      border-radius: 5px;
+      padding: 0 4px 1px;
+      background: #EEEEEE;
+    }
+  }
 </style>

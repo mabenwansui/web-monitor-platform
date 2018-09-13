@@ -26,7 +26,8 @@ export default function jsMonitorCharts(dom){
     //  text: 'H端js错误日志'
     //}],
     legend: {
-      data: ['今天', '7天前']
+      data: ['今天', '7天前'],
+      left: '50px'
     },
     tooltip: {
       trigger: 'axis'
@@ -45,7 +46,7 @@ export default function jsMonitorCharts(dom){
       areaStyle: {
         normal: {
           color: '#4caf50',
-          opacity: .1
+          opacity: 0
         }
       },
       showSymbol: true,

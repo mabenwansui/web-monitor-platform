@@ -10,15 +10,15 @@
           </dl>
           <dl class="resource">
             <dt></dt>
-            <dd><router-link to="/performance-monitor/fe-pc-h/resource-list">资源加载时间</router-link></dd>
+            <dd><router-link to="/performance-monitor/fe-pc-h/page-list">可操作时间</router-link></dd>
           </dl>
           <dl class="ajax">
             <dt></dt>
-            <dd><router-link to="/js-monitor/js-list/fe-h-pc">ajax性能</router-link></dd>
+            <dd><router-link to="#">ajax性能</router-link></dd>
           </dl>
           <dl class="pageload">
             <dt></dt>
-            <dd><router-link to="/js-monitor/js-list/fe-h-pc">整页加载时间</router-link></dd>
+            <dd><router-link to="/performance-monitor/fe-pc-h/page-list">整页加载时间</router-link></dd>
           </dl>
         </div>
       </article>

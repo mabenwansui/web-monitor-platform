@@ -44,7 +44,7 @@
             <dl>
               <dt>OnLoad耗时 :</dt>
               <dd>300ms</dd>
-            </dl>                      
+            </dl>
           </div>
         </div>
       </section>
@@ -54,12 +54,22 @@
           <dd>
             <table>
               <tr>
+                <td colspan="2">
+                  <span class="label">#body</span>
+                  <span class="label">.wrap.box</span>
+                  <span class="label">.main</span>
+                  <span class="label">@job-manage</span>
+                </td>
+              </tr>
+              <tr>
                 <th>event :</th>
                 <td>click</td>
               </tr>
               <tr>
                 <th>element :</th>
-                <td>div[class=wrap box]>div[class=main]>section[class=…s=title]>ul>li[class=,data-selector=job-manage]>a</td>
+                <td>
+                  div<strong class="text-warning">[class=wrap box]</strong>>div<strong class="text-warning">[class=main]</strong>>section<strong class="text-warning">[class=…s=title]</strong>>ul>li<strong class="text-warning">[class=,data-selector=job-manage]</strong>>a
+                </td>
               </tr>
               <tr>
                 <th>time :</th>
@@ -105,7 +115,7 @@
               </tr>
             </table>
           </dd>
-        </dl>                
+        </dl>
         <dl>
           <dt></dt>
           <dd>
@@ -156,40 +166,41 @@
     <aside class="aside-user-list">
       <div class="search">
         <Search />
-      </div>    
-      <div class="list">   
+      </div>
+      <div class="list">
         <ul>
+          <li class="more">more</li>
           <li class="active">
             <a href="javascript:;">
-              <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
+              <p title="fac9ecfb615530881a667e00ad0d9493">用户ID: fac9ecfb6155... </p>
               <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
               <p>北京     2018-06-22 16:50</p>
             </a>
           </li>
           <li>
             <a href="javascript:;">
-              <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
+              <p title="fac9ecfb615530881a667e00ad0d9493">用户ID: fac9ecfb6155... </p>
               <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
               <p>北京     2018-06-22 16:50</p>
             </a>
           </li>
           <li>
             <a href="javascript:;">
-              <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
+              <p title="fac9ecfb615530881a667e00ad0d9493">用户ID: fac9ecfb6155... </p>
               <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
               <p>北京     2018-06-22 16:50</p>
             </a>
           </li>
           <li>
             <a href="javascript:;">
-              <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
+              <p title="fac9ecfb615530881a667e00ad0d9493">用户ID: fac9ecfb6155... </p>
               <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
               <p>北京     2018-06-22 16:50</p>
             </a>
           </li>
           <li>
             <a href="javascript:;">
-              <p>用户ID: fac9ecfb615530881a667e00ad0d9493 </p>
+              <p title="fac9ecfb615530881a667e00ad0d9493">用户ID: fac9ecfb6155... </p>
               <p>Chrome/63.0.3239.108  Mac OS X 10_13_1</p>
               <p>北京     2018-06-22 16:50</p>
             </a>
@@ -221,7 +232,7 @@
           }
         ]
       }
-    }    
+    }
   }
 </script>
 
@@ -236,6 +247,19 @@
       width: 300px;
       //height: 100%;
       border-left: 4px solid #eee;
+      position: relative;
+      .more{
+        position: absolute;
+        border: none;
+        bottom: 0;
+        right: 0;
+        background: #F86C52;
+        color: #fff;
+        border-radius: 12px 0 0 0px;
+        line-height: 18px;
+        padding: 0 5px 1px 10px;
+        cursor: pointer;
+      }
       li{
         border-bottom: 1px solid #eee;
         padding: 10px 10px 10px 15px;
@@ -252,7 +276,7 @@
             position: absolute;
             left: 0;
             top: calc(50% - 6px);
-            width:0px; height:0px; line-height:0px; 
+            width:0px; height:0px; line-height:0px;
             border: 6px solid transparent;
             border-left-color: #4F5364;
           }
@@ -316,7 +340,7 @@
         overflow: hidden;
         border-radius: 50%;
         background: #fff;
-        border: 2px solid #F86C52;      
+        border: 2px solid #F86C52;
       }
       &.active{
         color: #F86C52;
@@ -339,7 +363,7 @@
           position: absolute;
           top: 10px;
           right: 12px;
-        }   
+        }
         table{
           th{
             text-align: right;
@@ -349,6 +373,18 @@
           }
           th, td{
             vertical-align: top;
+          }
+          .label{
+            background: #F86C52;
+            border-radius: 5px;
+            color: #fff;
+            padding: 0 5px 1px 5px;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+          }
+          i{
+            margin: 0 8px;
           }
         }
       }

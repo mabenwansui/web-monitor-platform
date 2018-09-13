@@ -5,6 +5,8 @@ import browserCharts from './browserCharts'
 import systemCharts from './systemCharts'
 import pageRenderCharts from './pageRenderCharts'
 import map from './map'
+import dnsCharts from './dnsCharts'
+import dnsPieCharts from './dnsPieCharts'
 
 export {
   jsMonitorCharts,
@@ -13,5 +15,7 @@ export {
   browserCharts,
   systemCharts,
   pageRenderCharts,
-  map
+  map,
+  dnsCharts,
+  dnsPieCharts
 }

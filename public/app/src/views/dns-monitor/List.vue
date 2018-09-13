@@ -1,14 +1,14 @@
 <template>
   <div class="box-space">
     <Breadcrumb :data="path" />
-    <div class="main">
+    <div class="section">
       <article>
-        <div class="filter-bar">
-          <span class="domain-text">类型 :</span>
-          <SelectUI :data="[
-            {title: '平均加载时间', value: 'agv'},
-            {title: '可用性', value: 'fault'}
-          ]" />
+        <div class="filter">
+          <span class="domain-text">选择域名 :</span>
+          <SelectUI :data="[{title: 'concat.lietou-static.com', value: 'concat.lietou-static.com'}]" />
+
+          <span class="domain-text" style="margin-left: 60px;">类型 :</span>
+          <SelectUI :data="[{title: '平均加载时间', value: 'agv'}]" />
         </div>
         <div class="map"></div>
       </article>
@@ -127,27 +127,11 @@
         </section>
       </aside>
     </div>
-    <section class="section-box ratio-charts">
-      <div class="title">
-        加载曲线图
-        <span class="filter-bar">
-          <SelectUI :data="[
-            {title: '今天', value: 'today'},
-            {title: '1天前', value: '1'},
-            {title: '2天前', value: '2'},
-            {title: '3天前', value: '3'},
-            {title: '4天前', value: '4'},
-            {title: '5天前', value: '5'},
-            {title: '6天前', value: '6'},
-            {title: '7天前', value: '7'},
-          ]" />
-        </span>
-      </div>
-      <div class="info">
-        <div class="line-chart"></div>
-        <aside class="pie-chart"></aside>
-      </div>
-    </section>
+    <div class="section">
+      <section class="section-box">
+        <div class="title">曲线图</div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -164,29 +148,24 @@
         path: [
           {
             title: 'DNS'
-          },
-          {
-            comp: 'static-domain'
           }
         ]
       }
     },
     mounted(){
       charts.map(document.querySelector('.map'));
-      charts.dnsCharts(document.querySelector('.line-chart'));
-      charts.dnsPieCharts(document.querySelector('.pie-chart'));
     }
   }
 </script>
 
 <style lang="less" scoped>
-  .main{
+  .filter{
+    padding-bottom: 30px;
+    font-size: 14px;
+    .domain-text{margin-right: 10px;}
+  }
+  .section{
     display: flex;
-    .filter-bar{
-      padding-bottom: 30px;
-      font-size: 14px;
-      .domain-text{margin-right: 10px;}
-    }
     article{
       flex: 1;
       .map{
@@ -201,6 +180,7 @@
           margin-top: 15px;
         }
       }
+
       .list{
         margin-top: 20px;
         li{
@@ -259,30 +239,12 @@
           }
         }
       }
-    }
-  }
 
-  .ratio-charts{
-    margin-bottom: 0;
-    .title{
-      .filter-bar{
-        display: inline-block;
-        margin-left: 10px;
-      }
+
     }
-    .info{
-      display: flex;
-      justify-content: space-between;
-      .line-chart{
-        width: 760px;
-        margin-top: 20px;
-        height: 300px;
-      }
-      .pie-chart{
-        width: 300px;
-        margin-top: 10px;
-        height: 280px;
-      }
-    }
+
+
+
+
   }
 </style>
