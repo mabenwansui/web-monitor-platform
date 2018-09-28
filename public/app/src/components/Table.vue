@@ -66,11 +66,11 @@ export default {
     width: 1083px;
     overflow-x: auto;
     .table{
-      min-width: 100%;
       th,
       td{
         vertical-align: top;
-        max-width: 200px;
+        max-width: 250px;
+        min-width: 150px;
         word-wrap:break-word;
       }
     }

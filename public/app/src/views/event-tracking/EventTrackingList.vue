@@ -40,8 +40,11 @@
             item3: 'item3-info',
             item4: 'item4-info',
             item5: 'item5-info',
-            item6: 'item6-info',
-            item7: 'item7-info'
+            item6: 'item6-infoitem6-infoitem6-infoitem6-info',
+            item7: 'item6-info',
+            item8: 'item6-info',
+            item9: 'item7-info',
+            item10: 'item7-info',
           },
           {
             url: 'h.liepin.com/resume/',
@@ -50,7 +53,10 @@
             item4: 'item4-info',
             item5: 'item5-info',
             item6: 'item6-info',
-            item7: 'item7-info'
+            item7: 'item6-info',
+            item8: 'item6-info',
+            item9: 'item7-info',
+            item10: 'item7-info',
           },
           {
             url: 'h.liepin.com/resume/',
@@ -59,7 +65,10 @@
             item4: 'item4-info',
             item5: 'item5-info',
             item6: 'item6-info',
-            item7: 'item7-info'
+            item7: 'item6-info',
+            item8: 'item6-info',
+            item9: 'item7-info',
+            item10: 'item7-info',
           }
         ],
         path: [
