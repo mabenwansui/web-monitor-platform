@@ -28,7 +28,7 @@
     overflow: hidden;
     position: relative;
     &.error{
-      .bar{background: #E08F81;}
+      .bar{background: #FFBCBC;}
     }
     &.light{
       .bar{background: #6AE0E0;}

@@ -116,15 +116,7 @@
 <style scoped lang="less">
   .title{
     font-size: 14px;
-    line-height: 26px;
+    line-height: 24px;
   }
-  .sub-bar{
-    margin-bottom: 5px;
-    span{
-      display: inline-block;
-      border-radius: 5px;
-      padding: 0 4px 1px;
-      background: #EEEEEE;
-    }
-  }
+
 </style>

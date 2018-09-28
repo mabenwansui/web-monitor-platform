@@ -11,6 +11,7 @@
           @click="event=> {active = item.link}"
         >
           <router-link :class="`iconfont ${item.icon}`" :to="item.link" />
+          <span class="tips">{{item.title}}</span>
         </li>
       </ul>
     </div>
@@ -33,16 +34,29 @@ export default {
     return {
       list: [
         {
+          title: '错误监控',
           icon: 'icon-jiankong',
           link: '/'
         },
         {
+          title: '性能监控',
           icon: 'icon-xingnengceshi',
           link: '/performance-monitor/'
         },
         {
+          title: 'ajax监控',
+          icon: 'icon-ajax',
+          link: '/1'
+        },
+        {
+          title: 'dns监控',
           icon: 'icon-ymwz-yjxdns',
           link: '/dns-monitor/'
+        },
+        {
+          title: '埋点监控',
+          icon: 'icon-keshihuamaidian',
+          link: '/event-tracking/'
         }
       ],
       active: this.$router.history.current.path
@@ -82,16 +96,36 @@ export default {
     margin-top: 50px;
     color: #fff;
     li{
+      z-index: 10;
       cursor: pointer;
       margin-bottom: 14px;
       height: 34px;
       line-height: 34px;
       margin-left: 5px;
       border-radius: 20px 0 0 20px;
+      position: relative;
       a{
         display: inline-block;
         width: 100%;
         height: 100%;
+      }
+      .tips{
+        display: none;
+        padding: 0px 14px;
+        border-radius: 16px;
+        white-space: nowrap;
+        line-height: 28px;
+        position: absolute;
+        left: 60px;
+        top: 50%;
+        margin-top: -16px;
+        background: rgba(79, 83, 100, .9);
+        color: #fff;
+      }
+      &:hover{
+        .tips{
+          display: inline-block;
+        }
       }
       &.active{
         background: #fff;
@@ -112,6 +146,12 @@ export default {
       }
       &.icon-xingnengceshi{
         font-size: 22px;
+      }
+      &.icon-ajax{
+        font-size: 19px;
+      }
+      &.icon-keshihuamaidian{
+        font-size: 24px;
       }
     }
   }

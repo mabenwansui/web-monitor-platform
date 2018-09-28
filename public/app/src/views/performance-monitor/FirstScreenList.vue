@@ -1,47 +1,47 @@
 <template>
   <div class="box-space">
     <Breadcrumb :data="path" />
-    <SubMenu type="performanceMonitor" active="resource" />
+    <SubMenu type="performanceMonitor" active="firstscreenlist" />
     <SearchBar />
 
-    <div class="box">
-      <div class="map"></div>
-
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>访问页面</th>
+          <th width="100" class="text-center">访问次数</th>
+          <th width="100" class="text-center">耗时</th>
+          <th width="100" class="text-center">超时率</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <router-link to="/performance-monitor/fe-h-pc/page-details">/job/showaddpage/</router-link>
+          </td>
+          <td class="text-center">
+            <ProgressBar type="success" html="10231" value="55%" />
+          </td>
+          <td class="text-center">
+            <ProgressBar type="info" html="12ms" value="%" />
+          </td>
+          <td class="text-center">5%</td>
+        </tr>
+        <tr>
+          <td>
+            <router-link to="/performance-monitor/fe-h-pc/page-details">/search/getConditionItem/</router-link>
+          </td>
+          <td class="text-center">
+            <ProgressBar type="success" html="10231" value="25%" />
+          </td>
+          <td class="text-center">
+            <ProgressBar type="info" html="10ms" value="45%" />
+          </td>
+          <td class="text-center">3%</td>
+        </tr>
+      </tbody>
+    </table>
     <!--
       <SubMenu :active="resourceTabActive" :data="resourceTab" />
-      <table class="table">
-        <thead>
-          <tr>
-            <th>资源路径</th>
-            <th width="100" class="text-center">类型</th>
-            <th width="100" class="text-center">耗时</th>
-            <th width="100" class="text-center">大小</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><router-link to="/performance-monitor/fe-h-pc/page-details">concat.lietou-static.com/fe-h-pc/v5/static/js/loader.js</router-link></td>
-            <td class="text-center">
-              <ProgressBar type="info" html="12s" value="75%" />
-            </td>
-            <td class="text-center">js</td>
-            <td class="text-center">
-              29k
-            </td>
-          </tr>
-          <tr>
-            <td><router-link to="/performance-monitor/fe-h-pc/page-details">concat.lietou-static.com/fe-h-pc/v5/js/common/header.js</router-link></td>
-            <td class="text-center">
-              <ProgressBar type="info" html="10s" value="45%" />
-            </td>
-            <td class="text-center">js</td>
-            <td class="text-center">
-              29k
-            </td>
-          </tr>
-        </tbody>
-      </table>
     -->
   </div>
 </template>
@@ -50,9 +50,10 @@
   import SubMenu from '@components/SubMenu'
   import SearchBar from '@components/SearchBar'
   import ProgressBar from '@components/ProgressBar'
+  import SelectUI from '@components/SelectUI'
   export default {
     name: 'performance-monitor-ResourceList',
-    components: {Breadcrumb, SubMenu, SearchBar, ProgressBar},
+    components: {Breadcrumb, SubMenu, SearchBar, ProgressBar, SelectUI},
     data(){
       return {
         path: [

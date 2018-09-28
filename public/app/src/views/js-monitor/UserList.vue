@@ -3,7 +3,7 @@
     <Breadcrumb :data="path" />
     <SubMenu type="jsMonitor" active="user" />
     <SearchBar placeholderInfo="用户ID" />
-    <div class="user-info">
+    <div class="header-info">
       <table>
         <tr>
           <td width="106">
@@ -122,12 +122,15 @@
 <style scoped lang="less">
   .title{
     font-size: 14px;
-    line-height: 26px;
+    line-height: 24px;
   }
-  .user-info{
+  .header-info{
+    border: 1px solid #eee;
+    border-top: 4px solid #F86C52;
+
     padding: 18px 25px;
     border-radius: 6px;
-    background: #E4E8FB;
+    //background: #E4E8FB;
     margin-bottom: 20px;
     table{
       width: 100%;
@@ -149,13 +152,6 @@
   }
 
   .sub-bar{
-    margin-bottom: 5px;
-    span{
-      display: inline-block;
-      border-radius: 5px;
-      padding: 0 4px 1px;
-      background: #EEEEEE;
-    }
   }
 
 

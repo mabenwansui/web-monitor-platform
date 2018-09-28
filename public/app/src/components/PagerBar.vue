@@ -1,10 +1,9 @@
 <template>
   <div class="pagerbar">
-    <a href="javascript:;" class="active">1</a>
-    <a href="javascript:;">2</a>
-    <a href="javascript:;">3</a>
-    <a href="javascript:;">4</a>
-    <a href="javascript:;">5</a>
+    <a href="javascript:;">
+      加载更多
+      <small><em>1</em> / 1100</small>
+    </a>
   </div>
 </template>
 <script>
@@ -25,14 +24,29 @@
       }
       &:hover{
         border-color: #F86C52;
+        background: #F86C52;
+        color: #fff;
+        small{
+          color: #fff;
+          em{color: #fff;}
+        }
       }
       display: inline-block;
       line-height: 22px;
-      padding: 0 8px;
+      padding: 8px 30px;
       margin: 0 5px;
       color: #232323;
-      border: 1px solid #F5F5F5;
-      border-radius: 50%;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      font-size: 14px;
+      small{
+        font-size: 12px;
+        color: #8B8B8B;
+        margin-left: 14px;
+        em{
+          color: #F86C52;
+        }
+      }
     }
   }
 </style>

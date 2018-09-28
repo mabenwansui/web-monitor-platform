@@ -1,8 +1,10 @@
 <template>
   <div class="main-container">
+    <!--
     <section class="header">
       <SelectPort />
     </section>
+    -->
     <section class="app">
       <div class="menu-box"><Nav /></div>
       <div class="main-box">
@@ -39,11 +41,11 @@
     height: 100%;
   }
   .header{
-    margin-bottom: 8px;
+    //margin-bottom: 30px;
   }
   .app{
     width: 1200px;
-    min-height: calc(100% - 30px);
+    min-height: calc(100%);
     display: flex;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

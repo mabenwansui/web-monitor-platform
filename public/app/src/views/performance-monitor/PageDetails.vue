@@ -77,10 +77,10 @@
             <thead>
               <tr>
                 <th>url</th>
-                <th class="text-center" width="200">耗时</th>
+                <th class="text-center" width="160">耗时</th>
                 <th class="text-center" width="80">大小</th>
                 <th class="text-center" width="80">类型</th>
-                <th class="text-center" width="80">版本号</th>
+                <th class="text-center" width="80">状态</th>
               </tr>
             </thead>
             <tbody>
@@ -91,7 +91,7 @@
                 </td>
                 <td class="text-center">1.9KB</td>
                 <td class="text-center">js</td>
-                <td class="text-center">c5adr1rt</td>
+                <td class="text-center">200</td>
               </tr>
               <tr>
                 <td>https://concat.lietou-static.com/fe-h-pc/v5/css/common/common.css</td>
@@ -100,7 +100,7 @@
                 </td>
                 <td class="text-center">17.9KB</td>
                 <td class="text-center">css</td>
-                <td class="text-center">eada21rt</td>
+                <td class="text-center">200</td>
               </tr>
               <tr>
                 <td>https://concat.lietou-static.com/fe-passport-pc/v5/static/images/logo.png</td>
@@ -109,7 +109,16 @@
                 </td>
                 <td class="text-center">17.9KB</td>
                 <td class="text-center">img</td>
-                <td class="text-center">eada21rt</td>
+                <td class="text-center">200</td>
+              </tr>
+              <tr>
+                <td>https://concat.lietou-static.com/fe-passport-pc/v5/static/images/logo.png</td>
+                <td class="text-center">
+                  <ProgressBar type="error" html="error" value="100%" />
+                </td>
+                <td class="text-center">17.9KB</td>
+                <td class="text-center">img</td>
+                <td class="text-center"><strong class="text-warning">404</strong></td>
               </tr>
             </tbody>
           </table>

@@ -44,19 +44,14 @@ export default {
           link: '/js-monitor/js-list/fe-h-pc'
         },
         {
-          title: 'ajax错误',
-          name: 'ajax',
-          link: '/js-monitor/ajax-list/fe-h-pc',
+          title: '静态资源加载失败',
+          name: 'resources',
+          link: '/js-monitor/user-list/fe-h-pc'
         },
         {
           title: '用户',
           name: 'user',
           link: '/js-monitor/user-list/fe-h-pc'
-        },
-        {
-          title: '埋点',
-          name: 'custom',
-          link: '/js-monitor/custom-list/fe-h-pc'
         }
       ],
       performanceMonitor: [
@@ -66,14 +61,24 @@ export default {
           link: '/performance-monitor/fe-pc-h/page-list'
         },
         {
-          title: 'ajax性能',
-          name: 'ajax',
-          link: '/'
+          title: '白屏时间',
+          name: 'whitescreenlist',
+          link: '/performance-monitor/fe-pc-h/white-screen-list'
+        },
+        {
+          title: '首屏时间',
+          name: 'firstscreenlist',
+          link: '/performance-monitor/fe-pc-h/first-screen-list'
         },
         {
           title: '资源加载',
-          name: 'resource',
-          link: '/'
+          name: 'resourceslist',
+          link: '/performance-monitor/fe-pc-h/white-screen-list'
+        },
+        {
+          title: '整页时间',
+          name: 'onloadlist',
+          link: '/performance-monitor/fe-pc-h/white-screen-list'
         }
       ]
     }

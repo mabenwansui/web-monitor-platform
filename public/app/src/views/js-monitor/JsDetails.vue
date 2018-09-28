@@ -11,7 +11,7 @@
           <div class="info-list">
             <dl class="row">
               <dt>报错信息 : </dt>
-              <dd>ReferenceError: fwfqweq is not defined</dd>
+              <dd>Uncaught QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'conncetJson' exceeded the quota.</dd>
             </dl>
             <dl>
               <dt>现次数 :</dt>
@@ -48,7 +48,8 @@
           </div>
         </div>
       </section>
-      <section class="timeline">
+      <SubMenu :data="subMenuItems" :active="subMentActive" />
+      <section class="timeline" v-if="userbehavior">
         <dl>
           <dt></dt>
           <dd>
@@ -68,7 +69,7 @@
               <tr>
                 <th>element :</th>
                 <td>
-                  div<strong class="text-warning">[class=wrap box]</strong>>div<strong class="text-warning">[class=main]</strong>>section<strong class="text-warning">[class=…s=title]</strong>>ul>li<strong class="text-warning">[class=,data-selector=job-manage]</strong>>a
+                  div<span class="text-warning">[class=wrap box]</span>>div<span class="text-warning">[class=main]</span>>section<span class="text-warning">[class=…s=title]</span>>ul>li<span class="text-warning">[class=,data-selector=job-manage]</span>>a
                 </td>
               </tr>
               <tr>
@@ -162,6 +163,48 @@
           </dd>
         </dl>
       </section>
+
+      <section class="section-box resource-box" v-if="resources">
+        <div class="resource-load">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>url</th>
+                <th class="text-center" width="100">耗时</th>
+                <th class="text-center" width="80">大小</th>
+                <th class="text-center" width="80">状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>https://concat.lietou-static.com/fe-h-pc/v5/static/js/loader.838a2c5d.js</td>
+                <td class="text-center">
+                  <ProgressBar type="info" html="75ms" value="25%" />
+                </td>
+                <td class="text-center">1.9KB</td>
+                <td class="text-center">200</td>
+              </tr>
+              <tr>
+                <td>https://concat.lietou-static.com/fe-h-pc/v5/static/js/stat.003286da.js</td>
+                <td class="text-center">
+                  <ProgressBar type="info" html="105ms" value="35%" />
+                </td>
+                <td class="text-center">1.9KB</td>
+                <td class="text-center">200</td>
+              </tr>
+              <tr>
+                <td>https://concat.lietou-static.com/fe-h-pc/v5/static/js/jquery-1.7.1.min.c7e0488b.js</td>
+                <td class="text-center">
+                  <ProgressBar type="info" html="125ms" value="55%" />
+                </td>
+                <td class="text-center">1.9KB</td>
+                <td class="text-center text-warning">404</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
     <aside class="aside-user-list">
       <div class="search">
@@ -214,11 +257,37 @@
 <script>
   import Breadcrumb from '@components/Breadcrumb'
   import Search from '@components/Search'
+  import SubMenu from '@components/SubMenu'
+  import ProgressBar from '@components/ProgressBar'
+
   export default {
     name: 'JsDetails',
-    components: {Breadcrumb, Search},
+    components: {Breadcrumb, Search, SubMenu, ProgressBar},
     data(){
       return {
+        userbehavior: true,
+        resources: false,
+        subMentActive: 'userbehavior',
+        subMenuItems: [
+          {
+            title: '用户行为',
+            name: 'userbehavior',
+            link: ()=> {
+              this.userbehavior = true;
+              this.resources = false;
+              this.subMentActive = 'userbehavior';
+            }
+          },
+          {
+            title: '资源加载',
+            name: 'resources',
+            link: ()=> {
+              this.userbehavior = false;
+              this.resources = true;
+              this.subMentActive = 'resources';
+            }
+          }
+        ],
         path: [
           {
             title: '错误监控',
@@ -238,7 +307,7 @@
 
 <style scoped lang="less">
   .box{ display:flex; height: 100%; }
-  .box-space{ flex: 1; }
+  .box-space{ flex: 1; position: relative;}
   .search{padding: 15px 10px; background: #4F5364;}
   .aside-user-list{
     overflow-y: auto;
@@ -284,10 +353,9 @@
       }
     }
   }
-
   .header-box{
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     .info{
       flex: 1;
       padding: 14px 16px;
@@ -299,7 +367,7 @@
         flex-wrap: wrap;
         dl{
           display: flex; width: 33%; margin-bottom: 5px;
-          dt{margin-right: 5px;}
+          dt{margin-right: 5px; white-space: nowrap;}
           &.row{
             width: 100%; margin-bottom: 10px;
           }
@@ -327,6 +395,7 @@
     padding-left: 26px;
     margin-left: 5px;
     border-radius: 8px;
+    margin-top: 30px;
     dl{
       position: relative;
       margin-bottom: 20px;

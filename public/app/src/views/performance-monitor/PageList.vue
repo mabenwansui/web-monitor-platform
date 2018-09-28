@@ -9,10 +9,10 @@
         <tr>
           <th>访问页面</th>
           <th width="100" class="text-center">访问次数</th>
-          <th width="100" class="text-center">白屏加载</th>
-          <th width="100" class="text-center">首屏加载</th>
+          <th width="100" class="text-center">白屏时间</th>
+          <th width="100" class="text-center">首屏时间</th>
           <th width="100" class="text-center">资源加载</th>
-          <th width="100" class="text-center">整页加载</th>
+          <th width="100" class="text-center">整页时间</th>
         </tr>
       </thead>
       <tbody>

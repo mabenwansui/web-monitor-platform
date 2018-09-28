@@ -6,20 +6,31 @@
         <div class="charts-list">
           <dl class="screen">
             <dt></dt>
-            <dd><router-link to="/performance-monitor/fe-pc-h/page-list">首屏时间</router-link></dd>
+            <dd>
+              <router-link to="/performance-monitor/fe-pc-h/first-screen-list">首屏时间</router-link>
+            </dd>
           </dl>
           <dl class="resource">
             <dt></dt>
-            <dd><router-link to="/performance-monitor/fe-pc-h/page-list">可操作时间</router-link></dd>
+            <dd>
+              <router-link to="/performance-monitor/fe-pc-h/white-screen-list">白屏时间</router-link>
+            </dd>
           </dl>
           <dl class="ajax">
             <dt></dt>
-            <dd><router-link to="#">ajax性能</router-link></dd>
+            <dd>
+              <router-link to="#">资源加载</router-link>
+            </dd>
           </dl>
           <dl class="pageload">
             <dt></dt>
-            <dd><router-link to="/performance-monitor/fe-pc-h/page-list">整页加载时间</router-link></dd>
+            <dd>
+              <router-link to="/performance-monitor/fe-pc-h/page-list">整页加载时间</router-link>
+            </dd>
           </dl>
+        </div>
+        <div class="btn-bar">
+          <router-link class="btn btn-warning" to="/performance-monitor/fe-pc-h/page-list">查看详细</router-link>
         </div>
       </article>
       <aside class="aside">
@@ -165,6 +176,14 @@
           }
         }
       }
+    }
+  }
+
+  .btn-bar{
+    padding: 30px 0 0;
+    text-align: center;
+    .btn{
+      padding: 6px 20px;
     }
   }
 
